@@ -37,9 +37,11 @@ def calculator():
                     document.getElementById("expression").value = '';
                 }
 
-                function calculateTrigFunction() {
+               function calculateTrigFunction() {
                     let expression = document.getElementById("expression").value;
-                    let result = Math.sin(eval(expression));  // 计算正弦函数，这里仅演示一个三角函数
+                                     // 将角度转换为弧度
+                    let radians = eval(expression) * Math.PI / 180;
+                    let result = Math.sin(radians);  // 计算正弦函数
                     document.getElementById("expression").value = result;
                 }
 
@@ -51,7 +53,7 @@ def calculator():
 
                 function calculateLogarithm() {
                     let expression = document.getElementById("expression").value;
-                    let result = Math.log(eval(expression));  // 计算对数函数
+                    let result = Math.log10(eval(expression));  // 计算以10为底的对数
                     document.getElementById("expression").value = result;
                 }
             </script>
